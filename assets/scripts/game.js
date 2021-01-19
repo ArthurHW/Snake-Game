@@ -3,6 +3,11 @@ import { update as updateFood, draw as drawFood} from "./food.js"
 import { outsideGrid } from "./grid.js"
 
 
+function changeToEasy(){
+    console.log('a')
+    return
+}
+
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById("game-board")
@@ -26,6 +31,7 @@ function main(currentTime){
     draw()
 }
 
+
 window.requestAnimationFrame(main)
 
 function update(){
@@ -43,3 +49,7 @@ function draw(){
 function checkDeath(){
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
 }
+
+
+
+

@@ -3,10 +3,7 @@ import { update as updateFood, draw as drawFood} from "./food.js"
 import { outsideGrid } from "./grid.js"
 
 
-function changeToEasy(){
-    console.log('a')
-    return
-}
+
 
 let lastRenderTime = 0
 let gameOver = false
@@ -48,6 +45,24 @@ function draw(){
 
 function checkDeath(){
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
+}
+
+// Mudança de dificuldade
+
+let easyButton = document.getElementById('easy')
+let hardButton = document.getElementById('hard')
+let impossibleButton = document.getElementById('impossible')
+let buttons = document.getElementsByClassName('changeDifficulty')
+
+easyButton.addEventListener('click', changeToEasy())
+hardButton.addEventListener('click', changeToHard())
+impossibleButton.addEventListener('click', changeToImpossible())
+
+function changeToEasy(){
+    buttons.forEach(element => {
+        element.style.backgroundColor = 'gray'
+        element.style.transform.scale = 1.0;
+    });
 }
 
 

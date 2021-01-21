@@ -47,23 +47,9 @@ function checkDeath(){
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
 }
 
-// Mudança de dificuldade
 
-let easyButton = document.getElementById('easy')
-let hardButton = document.getElementById('hard')
-let impossibleButton = document.getElementById('impossible')
-let buttons = document.getElementsByClassName('changeDifficulty')
 
-easyButton.addEventListener('click', changeToEasy())
-hardButton.addEventListener('click', changeToHard())
-impossibleButton.addEventListener('click', changeToImpossible())
 
-function changeToEasy(){
-    buttons.forEach(element => {
-        element.style.backgroundColor = 'gray'
-        element.style.transform.scale = 1.0;
-    });
-}
 
 
 
